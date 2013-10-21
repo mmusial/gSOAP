@@ -16,7 +16,7 @@ SOAPH=../stdsoap2.h
 SOAPC=../stdsoap2.c
 SOAPCPP=../stdsoap2.cpp
 #
-LIBS=-lm
+LIBS=-lm -lssl -lcrypto
 #
 COFLAGS=-O1
 #	For static linking use:
@@ -28,7 +28,7 @@ CWFLAGS=-Wall
 #
 CIFLAGS=-I..
 #
-CMFLAGS=
+CMFLAGS=-DWITH_OPENSSL
 #
 CFLAGS= $(CWFLAGS) $(COFLAGS) $(CIFLAGS) $(CMFLAGS)
 #
