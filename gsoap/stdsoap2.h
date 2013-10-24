@@ -251,6 +251,20 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 #  define HAVE_STRERROR_R
 #  define HAVE_WCTOMB
 #  define HAVE_MBTOWC
+# elif defined(ANDROID)
+#  define HAVE_POLL
+#  define HAVE_SNPRINTF
+#  define HAVE_STRRCHR
+#  define HAVE_STRTOD
+#  define HAVE_SSCANF
+#  define HAVE_STRTOL
+#  define HAVE_STRTOUL
+#  define HAVE_SYS_TIMEB_H
+#  define HAVE_FTIME
+#  define HAVE_RAND_R
+#  define HAVE_GMTIME_R
+#  define HAVE_LOCALTIME_R
+#  define HAVE_STRERROR_R
 # elif defined(__APPLE__)
 #  define HAVE_POLL
 #  define HAVE_SNPRINTF
@@ -831,7 +845,7 @@ extern "C" {
 # endif
 #elif defined(SOCKLEN_T)
 # define SOAP_SOCKLEN_T SOCKLEN_T
-#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(FREEBSD) || defined(__FreeBSD__) || defined(OPENBSD) || defined(__QNX__) || defined(QNX) || defined(OS390)
+#elif defined(__socklen_t_defined) || defined(_SOCKLEN_T) || defined(CYGWIN) || defined(ANDROID) || defined(FREEBSD) || defined(__FreeBSD__) || defined(OPENBSD) || defined(__QNX__) || defined(QNX) || defined(OS390)
 # define SOAP_SOCKLEN_T socklen_t
 #elif defined(IRIX) || defined(WIN32) || defined(__APPLE__) || defined(SUN_OS) || defined(OPENSERVER) || defined(TRU64) || defined(VXWORKS) || defined(HP_UX)
 # define SOAP_SOCKLEN_T int
